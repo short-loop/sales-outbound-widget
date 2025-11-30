@@ -21,6 +21,7 @@ interface VehicleInfo {
   mileage: string
   fuelType: string
   imageUrl: string
+  price: string
 }
 
 const formatCurrency = (value: number) =>
@@ -58,8 +59,6 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
     e.preventDefault()
     setIsSubmitting(true)
 
-    const randomUsedPrice = getRandomUsedPrice(vehicle)
-
     try {
       const response = await fetch(
         "https://internal-api-us.shortloop.dev/api/v1/scheduling/batch-debug",
@@ -94,8 +93,7 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
               mileage: vehicle.mileage,
               fuelType: vehicle.fuelType,
               imageUrl: vehicle.imageUrl,
-              price: randomUsedPrice,
-              condition: "used",
+              price: vehicle.price,
               comments: formData.comments,
             },
           }),
