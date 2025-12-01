@@ -70,7 +70,7 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
           body: JSON.stringify({
             assistantId: "692a003fc51dd95fc9c82af6",
             contact: {
-              name: `${formData.firstName} ${formData.lastName}`.trim(),
+              name: `${formData.firstName}`.trim(),
               phoneNo: formData.phone,
             },
             metaData: {
