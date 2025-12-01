@@ -71,7 +71,7 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
             assistantId: "692a003fc51dd95fc9c82af6",
             contact: {
               name: `${formData.firstName}`.trim(),
-              phoneNo: formData.phone,
+              phoneNo: `+1${formData.phone}`,
             },
             metaData: {
               email: formData.email,
