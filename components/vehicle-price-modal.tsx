@@ -270,8 +270,8 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
                     id="phone"
                     name="phone"
                     type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
+                    value={formData.phone.replace(/[^0-9]/g, "")}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value.replace(/[^0-9]/g, "") }))}
                     required
                     placeholder="(555) 123-4567"
                     className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500 focus:border-blue-500"
