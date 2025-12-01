@@ -123,19 +123,19 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-4 bg-black/40 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in zoom-in-95 duration-300 my-6 sm:my-10">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5 text-gray-700" />
         </button>
 
         {isSubmitted ? (
-          <div className="p-12 text-center">
+          <div className="p-8 sm:p-12 text-center">
             <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blue-100 flex items-center justify-center">
               <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -150,7 +150,7 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
         ) : (
           <div className="flex flex-col lg:flex-row">
             {/* Vehicle info section */}
-            <div className="lg:w-2/5 p-6 bg-gray-50">
+            <div className="lg:w-2/5 p-4 sm:p-6 bg-gray-50">
               <div className="aspect-video rounded-xl overflow-hidden mb-4 bg-white">
                 <img
                   src={vehicle.imageUrl || "/placeholder.svg"}
@@ -207,7 +207,7 @@ export function VehiclePriceModal({ vehicle, isOpen, onClose }: VehiclePriceModa
             </div>
 
             {/* Form section */}
-            <div className="lg:w-3/5 p-6">
+            <div className="lg:w-3/5 p-4 sm:p-6">
               <div className="mb-6">
                 <p className="text-blue-600 text-sm font-medium mb-1">Limited Time Offer</p>
                 <h2 className="text-2xl font-bold text-gray-900">{"Get Today's Price"}</h2>
